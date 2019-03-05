@@ -22,7 +22,7 @@ app.get('/resize', function (req, res) {
 	console.log (width);
 	console.log (height);
 	if (validateNumber(width,height)) {
-		let source = './images/origin/1';
+		let source = './images/origin/1.jpg';
 		let target = './images/resize/1';
 		let check_resize = resizeImage (source,target,width,height);
 		if (check_resize) {		 
@@ -66,10 +66,12 @@ app.post ('/check_size', urlencodedParser, function (req,res) {
 	});	
 })
 function resizeImage (source,target,width,height) {
-	gm(source).resize(width, height,"!").setFormat(process.env.DEFAULT_IMAGE_TYPE).write(target, function (err) {
+	gm(source).resize(width, height,"!").setFormat(process.env.DEFAULT_IMAGE_TYPE).autoOrient(process.env.AUTO_ORIENT).write(target, function (err) {
 		if (!err) {
-			console.log('resize image done');  }
-		});
+			console.log('resize image done');  }else {
+			console.log (err);
+		}
+		} );
 	return true;
 }
 function validateNumber (width, height) {
