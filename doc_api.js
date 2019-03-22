@@ -26,16 +26,16 @@
  * @apiHeader {String} authorization Logged in User's Id 
  * @apiParam {String} width width attribute of the IMG resized.
  * @apiParam {String} height attribute of the IMG resized.
- * @apiParam {file} [image_upload] image file upload by form-data.
+ * @apiParam {file} [image_upload] image file upload in body form-data.
  * @apiSuccess {file} response image was resized success.
  * @apiError [error] Can not resize image
  * @apiError [code] 400
  * @apiError [error] Can not find image file
- * @apiError [code] 401
- * @apiError [error] The image size too large (image size allow <= 8M)
- * @apiError [code] 402
- * @apiError [error] The image type not allow
- * @apiError [code] 403
+ * @apiError  Code 401
+ * @apiError  The image size too large (image size allow <= 8M)
+ * @apiError  Code 402
+ * @apiError  The image type not allow
+ * @apiError  Code 403
  * @apiErrorExample {json} [Error-Response]:
  *     HTTP/1.1 404 Not Found
  *     {
