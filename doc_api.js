@@ -21,21 +21,21 @@
  *     }
  */
  /** **  REQUIRED API DOCS TO BE COMPATIBLE WITH KINTOHUB **
- * @api {GET} /resize request resize image
+ * @api {POST} /resize request resize image
  * @apiName resize
  * @apiHeader {String} authorization Logged in User's Id 
  * @apiParam {String} width width attribute of the IMG resized.
  * @apiParam {String} height attribute of the IMG resized.
- * @apiSuccess {String} [code] 200.
- * @apiSuccess {String} [messsage]  resize success.
- * @apiSuccessExample {json} [Success-Response]:
- *     HTTP/1.1 200 OK
- *     {
- *      "code":200,
- *      "messsage":"resize success"
- *     }
+ * @apiParam {file} [image_upload] image file upload by form-data.
+ * @apiSuccess {file} response image was resized success.
  * @apiError [error] Can not resize image
  * @apiError [code] 400
+ * @apiError [error] Can not find image file
+ * @apiError [code] 401
+ * @apiError [error] The image size too large (image size allow <= 8M)
+ * @apiError [code] 402
+ * @apiError [error] The image type not allow
+ * @apiError [code] 403
  * @apiErrorExample {json} [Error-Response]:
  *     HTTP/1.1 404 Not Found
  *     {
