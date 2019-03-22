@@ -68,7 +68,7 @@ app.post('/resize' , upload.single('image_upload') , function (req, res) {
 							console.error(err)
 						}
 
-					},500)
+					},3000)
 
 
 				} 
