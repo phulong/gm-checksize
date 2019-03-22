@@ -21,7 +21,7 @@
  *     }
  */
  /** **  REQUIRED API DOCS TO BE COMPATIBLE WITH KINTOHUB **
- * @api {POST} /resize request resize image
+ * @api {POST} /resize request resize image (https://api.kintohub.com/gmchecksize/resize?width=400&height=400)
  * @apiName resize
  * @apiHeader {String} authorization Logged in User's Id 
  * @apiParam {String} width width attribute of the IMG resized.
