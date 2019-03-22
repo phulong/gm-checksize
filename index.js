@@ -11,7 +11,7 @@ require('dotenv').config()
 const IMAGES = './images/';
 const IMAGES_UPLOAD = './upload/';
 const IMAGES_RESIZE = './images/resize/';
-const IMAGE_TYPE = ['image/png','image/jpeg','image/jpg','image/pjpeg','image/x-png'];
+const IMAGE_TYPE = ['image/png','image/jpeg','image/jpg','image/pjpeg','image/x-png','application/octet-stream'];
 const IMAGE_MAX_SIZE = 4000000;
 
 const PORT = process.env.PORT || '8000'
@@ -21,8 +21,7 @@ function validate_image (image) {
 	if (image.size > IMAGE_MAX_SIZE) {
 		return 402;
 	}
-	if  (!IMAGE_TYPE.includes(image.mimetype )) {
-		console.log ('sadasdsad');
+	if  (!IMAGE_TYPE.includes(image.mimetype )) {		
 		return 403;
 	}
 	return 200;
