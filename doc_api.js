@@ -28,14 +28,10 @@
  * @apiParam {String} height attribute of the IMG resized.
  * @apiParam {file} [image_upload] image file upload in body form-data.
  * @apiSuccess {file} response image was resized success.
- * @apiError [error] Can not resize image
- * @apiError [code] 400
- * @apiError [error] Can not find image file
- * @apiError  Code 401
- * @apiError  The image size too large (image size allow <= 8M)
- * @apiError  Code 402
- * @apiError  The image type not allow
- * @apiError  Code 403
+ * @apiError (400) {String} Can not resize image 
+ * @apiError (401) {String} Can not find image file
+ * @apiError (402) {String} The image size too large (image size allow <= 4MB) 
+ * @apiError (403) {String}  The image type not allow
  * @apiErrorExample {json} [Error-Response]:
  *     HTTP/1.1 404 Not Found
  *     {
